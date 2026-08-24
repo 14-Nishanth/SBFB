@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sribalamuruganflyashbricks.in/sitemap.xml
