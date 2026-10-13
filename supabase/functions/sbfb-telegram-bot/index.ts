@@ -202,10 +202,10 @@ async function handleMessage(message: any) {
     return await send(chatId, "Cancelled. No record was saved.");
   }
   if (first === "/start" || first === "/menu") {
-    if (!role) return await send(chatId, "Your Telegram account is not assigned to SBFB Company Manager. Ask the administrator to assign your role.");
+    if (!role) return await send(chatId, "Your Telegram ID is " + id + ". This account is not assigned yet; share this ID with the SBFB administrator to receive manager or staff access.");
     return await send(chatId, menu(role).join("\n"));
   }
-  if (!role) return await send(chatId, "Access not assigned. Ask the SBFB administrator to add your Telegram ID.");
+  if (!role) return await send(chatId, "Access not assigned. Your Telegram ID is " + id + ". Share it with the SBFB administrator.");
   if (first === "/setrole") {
     if (role !== "admin") return await send(chatId, "Only the admin can assign roles.");
     const parts = text.split(/\s+/);
