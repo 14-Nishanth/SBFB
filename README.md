@@ -2,7 +2,7 @@
 
 A web-based management app for Sri Balamurugan Fly Ash Bricks, designed to be opened as a **Telegram Mini App** and backed by **Supabase** for cloud data storage.
 
-> **Project status:** The initial app and backend are in the repository. Finish the setup steps below and test the deployed app before using it for live business records. Advanced production-recipe, FIFO payment, editing, and profit workflows are still in progress and must not be assumed operational.
+> **Project status:** The app is published through GitHub Pages and the `sbfb-api` Edge Function is deployed. Recipe-based production, FIFO payment allocation, record editing, expense entry, and a period profit estimate are now connected in the code. Complete an end-to-end test from Telegram before relying on these workflows for live business records.
 
 ## Features in the current app
 
@@ -11,13 +11,13 @@ A web-based management app for Sri Balamurugan Fly Ash Bricks, designed to be op
 - Sales and outward records
 - Customer and supplier records
 - Employee records, attendance, and work entries
-- Production-entry form with manually entered cost components
+- Manual production-entry form with manually entered cost components\n- Production recipes and recipe-based costing with stock deduction (recipe units must match stock and rate units)\n- FIFO allocation of customer receipts and supplier payments\n- Business-expense tracking\n- Record editing and a period profit estimate
 - Rate Master
 - Weekly and monthly turnover reports
 - Customer receivables and supplier payables summaries
 - Record-by-record deletion
 
-The feature set depends on the version of the Supabase Edge Function currently deployed. Verify all actions in a test run before relying on them for business operations.
+The backend is deployed as Edge Function version 5 at the time this README was updated. Verify all actions in a test run before relying on them for business operations. The profit number is a period estimate (sales minus all production costs and expenses), not inventory-adjusted accounting profit.
 
 ## Architecture
 
@@ -99,12 +99,12 @@ Open the bot from Telegram to test the Mini App. Authentication relies on Telegr
 
 - [ ] Enable GitHub Pages using GitHub Actions and confirm the published URL works.
 - [ ] Configure the required Supabase Edge Function secrets.
-- [ ] Deploy the latest Edge Function code and verify its deployed version.
+- [x] Deploy the latest Edge Function code (version 5) and verify it is active.
 - [ ] Configure the Telegram menu button in BotFather.
 - [ ] Test login/authentication and each data-entry/reporting workflow.
-- [ ] Complete and test recipe-based production costing and raw-material stock deduction.
-- [ ] Complete and test FIFO customer receipts and supplier payments.
-- [ ] Complete record-editing screens and business-expense/profit reporting.
+- [ ] Test recipe-based production costing and raw-material stock deduction with sample quantities.
+- [ ] Test FIFO customer receipts and supplier payments with sample records.
+- [x] Add record editing, business-expense entry, and period profit estimate UI.\n- [ ] Test editing, expenses, and profit reporting from Telegram.
 - [ ] Verify backups and restore procedure before using the app for critical records.
 
 ## Security
